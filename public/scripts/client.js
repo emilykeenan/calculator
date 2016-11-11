@@ -5,19 +5,16 @@ var numbers = {
 };
 
 $(document).ready(function() {
-console.log('dis is working');
 
 $('.number').on('click', function() {
   var num = $(this).data('number');
   storeXY(num);
   appendDOM(numbers);
-  console.log(numbers);
 });
 
 
 $('.operator').on('click', function() {
   numbers.operator = $(this).data('operator');
-console.log(numbers);
 });
 
 $('.equals').on('click', findOperation);
@@ -60,7 +57,6 @@ function getSubtractedNumbers() {
     type: 'GET',
     url: '/subtract',
     success: function(data) {
-      console.log('getting the subtracted numbers');
       appendResult(data);
     }
   });
@@ -71,7 +67,6 @@ function getMultipliedNumbers() {
     type: 'GET',
     url: '/multiply',
     success: function(data) {
-      console.log('getting the subtracted numbers');
       appendResult(data);
     }
   });
@@ -82,7 +77,6 @@ function getDividedNumbers() {
     type: 'GET',
     url: '/divide',
     success: function(data) {
-      console.log('getting the subtracted numbers');
       appendResult(data);
     }
   });
@@ -167,6 +161,5 @@ function appendDOM(numbers)  {
 }
 
 function appendResult(num) {
-  console.log('appending results');
   $('#result').html(num.result);
 }
