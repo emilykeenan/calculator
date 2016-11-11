@@ -20,62 +20,136 @@ $('.operator').on('click', function() {
 console.log(numbers);
 });
 
-});
-
-function postAdd() {
-  $.ajax({
-    type: "POST",
-    url: "/add",
-    success: function(data){
-       appendResult(data.result);
-    }
-    error: function() {
-      console.log('error in add ajax post request');
-    }
+$('.equals').on('click', findOperation);
 
 });
+
+function getNumbers() {
+  var operator = numbers.operator;
+  switch (operator) {
+    case 'add':
+      getAddedNumbers();
+      break;
+    case 'subtract':
+      getSubtractedNumbers();
+      break;
+    case 'multiply':
+      getMultipliedNumbers();
+      break;
+    case 'divide':
+      getDividedNumbers();
+      break;
+    default:
+
+  }
 }
 
-function postSubtract() {
+function getAddedNumbers() {
   $.ajax({
-    type: "POST",
-    url: "/subtract",
-    success: function(data){
-       appendResult(data.result);
+    type: 'GET',
+    url: '/add',
+    success: function(data) {
+      console.log('getting the numbers');
+      appendResult(data);
     }
-    error: function() {
-      console.log('error in subtract ajax post request');
-    }
-
-});
+  });
 }
 
-function postMultiply() {
+function getSubtractedNumbers() {
   $.ajax({
-    type: "POST",
-    url: "/multiply",
-    success: function(data){
-       appendResult(data.result);
+    type: 'GET',
+    url: '/subtract',
+    success: function(data) {
+      console.log('getting the subtracted numbers');
+      appendResult(data);
     }
-    error: function() {
-      console.log('error in multiply ajax post request');
-    }
-
-});
+  });
 }
 
-function postDivide() {
+function getMultipliedNumbers() {
   $.ajax({
-    type: "POST",
-    url: "/divide",
-    success: function(data){
-       appendResult(data.result);
+    type: 'GET',
+    url: '/multiply',
+    success: function(data) {
+      console.log('getting the subtracted numbers');
+      appendResult(data);
     }
-    error: function() {
-      console.log('error in divide ajax post request');
-    }
+  });
+}
 
-});
+function getDividedNumbers() {
+  $.ajax({
+    type: 'GET',
+    url: '/divide',
+    success: function(data) {
+      console.log('getting the subtracted numbers');
+      appendResult(data);
+    }
+  });
+}
+
+function findOperation() {
+  var operator = numbers.operator;
+  switch (operator) {
+    case 'add':
+      addNumbers();
+      break;
+    case 'subtract':
+      subtractNumbers();
+      break;
+    case 'multiply':
+      multiplyNumbers();
+      break;
+    case 'divide':
+      divideNumbers();
+      break;
+    default:
+
+  }
+}
+
+function addNumbers() {
+  $.ajax({
+    type: 'POST',
+    url: '/add',
+    data: numbers,
+    success: function(data) {
+      getNumbers();
+    }
+  });
+}
+
+function subtractNumbers() {
+  $.ajax({
+    type: 'POST',
+    url: '/subtract',
+    data: numbers,
+    success: function(data) {
+      getNumbers();
+    }
+  });
+}
+
+function multiplyNumbers() {
+  $.ajax({
+    type: 'POST',
+    url: '/multiply',
+    data: numbers,
+    success: function(data) {
+      getNumbers();
+    }
+  });
+}
+
+function divideNumbers() {
+  $.ajax({
+    type: 'POST',
+    url: '/divide',
+    data: numbers,
+    success: function(data) {
+      getNumbers();
+    }
+  });
 }
 
 function storeXY(num) {
@@ -93,5 +167,6 @@ function appendDOM(numbers)  {
 }
 
 function appendResult(num) {
-  $('#result').html(num);
+  console.log('appending results');
+  $('#result').html(num.result);
 }
