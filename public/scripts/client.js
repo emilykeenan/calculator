@@ -1,3 +1,4 @@
+// setting empty object to send back to the server
 var numbers = {
   x: '',
   y: '',
@@ -6,21 +7,26 @@ var numbers = {
 
 $(document).ready(function() {
 
+// event listener to get values of x and y
 $('.number').on('click', function() {
   var num = $(this).data('number');
   storeXY(num);
   appendDOM(numbers);
 });
 
-
+// event listener to get operator
 $('.operator').on('click', function() {
   numbers.operator = $(this).data('operator');
 });
 
+// event listener to tell the client to send numbers to the appropriate route on the server
 $('.equals').on('click', findOperation);
+
+$('.clear').on('click', clearNumbers);
 
 });
 
+// function to get results from the server, depending which operator was clicked
 function getNumbers() {
   var operator = numbers.operator;
   switch (operator) {
@@ -41,6 +47,7 @@ function getNumbers() {
   }
 }
 
+// function to get sum of x and y from server
 function getAddedNumbers() {
   $.ajax({
     type: 'GET',
@@ -51,7 +58,7 @@ function getAddedNumbers() {
     }
   });
 }
-
+// function to get difference of x and y from server
 function getSubtractedNumbers() {
   $.ajax({
     type: 'GET',
@@ -62,6 +69,7 @@ function getSubtractedNumbers() {
   });
 }
 
+// function to get product of x and y from server
 function getMultipliedNumbers() {
   $.ajax({
     type: 'GET',
@@ -72,6 +80,7 @@ function getMultipliedNumbers() {
   });
 }
 
+// function to get quotient of x and y from server
 function getDividedNumbers() {
   $.ajax({
     type: 'GET',
@@ -82,6 +91,7 @@ function getDividedNumbers() {
   });
 }
 
+// function to determine where to send the numbers object
 function findOperation() {
   var operator = numbers.operator;
   switch (operator) {
@@ -102,6 +112,7 @@ function findOperation() {
   }
 }
 
+// function to send numbers to the server to be added together
 function addNumbers() {
   $.ajax({
     type: 'POST',
@@ -113,6 +124,7 @@ function addNumbers() {
   });
 }
 
+// function to send numbers to the server to be subtracted
 function subtractNumbers() {
   $.ajax({
     type: 'POST',
@@ -124,6 +136,7 @@ function subtractNumbers() {
   });
 }
 
+// function to send numbers to the server to be multiplied
 function multiplyNumbers() {
   $.ajax({
     type: 'POST',
@@ -135,6 +148,7 @@ function multiplyNumbers() {
   });
 }
 
+// function to send numbers to the server to be divided
 function divideNumbers() {
   $.ajax({
     type: 'POST',
@@ -146,6 +160,7 @@ function divideNumbers() {
   });
 }
 
+// function to store clicked numbers in numbers
 function storeXY(num) {
   if(numbers.operator === '') {
     numbers.x += num;
@@ -154,12 +169,23 @@ function storeXY(num) {
   }
 }
 
+// function to add numbers to DOM
 function appendDOM(numbers)  {
   $('#x').html(numbers.x);
   $('#operator').html(numbers.x);
   $('#y').html(numbers.y);
 }
 
+// function to add result to DOM
 function appendResult(num) {
   $('#result').html(num.result);
+}
+
+// function to clear numbers
+function clearNumbers() {
+  numbers.x = '';
+  numbers.y = '';
+  numbers.operator = '';
+  appendDOM(numbers);
+  $('#result').html('');
 }
