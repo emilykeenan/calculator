@@ -14,7 +14,7 @@ $('.number').on('click', function() {
   appendDOM(numbers);
 });
 
-// event listener to get operator
+// event listener to get operator and put symbol on the DOM
 $('.operator').on('click', function() {
   numbers.operator = $(this).data('operator');
   appendOperator(numbers);
@@ -177,6 +177,7 @@ function appendDOM(numbers)  {
   $('#y').html(numbers.y);
 }
 
+// function to tell which operator is being called and add symbol to the DOM
 function appendOperator(numbers) {
   switch (numbers.operator) {
     case 'add':
