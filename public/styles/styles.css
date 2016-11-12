@@ -1,0 +1,18 @@
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+#container {
+  width: 300px;
+}
+
+#calculations {
+  font-family: 'Orbitron', sans-serif;
+}
+
+button {
+  height: 70px;
+  width: 70px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+}

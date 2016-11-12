@@ -4,36 +4,40 @@
   <meta charset="utf-8">
   <title>Calculator</title>
   <link rel="stylesheet" href="../styles/styles.css" />
+  <link rel="stylesheet" href="../styles/bootstrap-theme.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito|Orbitron" rel="stylesheet">
   <script type="text/javascript" src="../assets/vendors/jquery.min.js"></script>
   <script type="text/javascript" src="../scripts/client.js"></script>
 </head>
 <body>
   <h1>Doin' Math</h1>
-  <div id="numbers">
-    <button class="number" data-number="1">1</button>
-    <button class="number" data-number="2">2</button>
-    <button class="number" data-number="3">3</button>
-    <button class="number" data-number="4">4</button>
-    <button class="number" data-number="5">5</button>
-    <button class="number" data-number="6">6</button>
-    <button class="number" data-number="7">7</button>
-    <button class="number" data-number="8">8</button>
-    <button class="number" data-number="9">9</button>
-    <button class="number" data-number="0">0</button>
-    <button class="number" data-number=".">.</button>
+  <div id="container">
+    <div id="calculations">
+      <p id="x"></p>
+      <p id="y"></p>
+      <h2 id="result">Result</h2>
+    </div>
+    <div id="numbers">
+      <button class="number btn btn-default" data-number="1">1</button>
+      <button class="number btn btn-default" data-number="2">2</button>
+      <button class="number btn btn-default" data-number="3">3</button>
+      <button class="number btn btn-default" data-number="4">4</button>
+      <button class="number btn btn-default" data-number="5">5</button>
+      <button class="number btn btn-default" data-number="6">6</button>
+      <button class="number btn btn-default" data-number="7">7</button>
+      <button class="number btn btn-default" data-number="8">8</button>
+      <button class="number btn btn-default" data-number="9">9</button>
+      <button class="number btn btn-default" data-number="0">0</button>
+      <button class="number btn btn-default" data-number=".">.</button>
+    </div>
+    <div id="operators">
+      <button class="operator btn btn-default" data-operator="add">+</button>
+      <button class="operator btn btn-default" data-operator="subtract">-</button>
+      <button class="operator btn btn-default" data-operator="multiply">*</button>
+      <button class="operator btn btn-default" data-operator="divide">/</button>
+      <button class="equals btn btn-default" data-operator="equals">=</button>
+      <button class="clear btn btn-default" data-operator="clear">clear</button>
+    </div>
   </div>
-  <div id="operators">
-    <button class="operator" data-operator="add">+</button>
-    <button class="operator" data-operator="subtract">-</button>
-    <button class="operator" data-operator="multiply">*</button>
-    <button class="operator" data-operator="divide">/</button>
-    <button class="equals" data-operator="equals">=</button>
-    <button class="clear" data-operator="clear">clear</button>
-  </div>
-  <div id="numbers">
-    <p id="x"></p>
-    <p id="y"></p>
-  <h2 id="result">Result</h2>
-</div>
 </body>
 </html>
