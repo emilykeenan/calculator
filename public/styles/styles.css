@@ -1,14 +1,18 @@
 body {
   font-family: 'Nunito', sans-serif;
   color: black;
-  background: #666666;
+  background: url('../assets/images/background.jpg');
+  margin: 0;
 }
 
 h1 {
   font-size: 65px;
   margin: 0 auto;
   text-align: center;
-  margin: 40px auto 50px auto;
+  padding: 40px;
+  margin: 0 auto 50px auto;
+  background: hsla(30, 96%, 52%, 0.7);
+  border-bottom: 3px solid #cf6b00;
 }
 
 #container {
@@ -24,7 +28,7 @@ h1 {
 #calculations {
   font-family: 'Orbitron', sans-serif;
   height: 100px;
-  background-color: orange;
+  background-color: #ed9c00;
   width: 292px;
   margin: 0 auto 10px auto;
   border-radius: 3px;
