@@ -1,6 +1,14 @@
 body {
   font-family: 'Nunito', sans-serif;
   color: black;
+  background: #666666;
+}
+
+h1 {
+  font-size: 65px;
+  margin: 0 auto;
+  text-align: center;
+  margin: 40px auto 50px auto;
 }
 
 #container {
@@ -20,6 +28,7 @@ body {
   border-radius: 3px;
   padding: 10px;
   overflow: hidden;
+  font-size: 25px;
 }
 
 #x {
@@ -32,6 +41,10 @@ body {
 
 #operation {
   display: inline;
+}
+
+#result {
+  font-size: 30px;
 }
 
 button {
