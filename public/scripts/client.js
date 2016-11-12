@@ -207,5 +207,6 @@ function clearNumbers() {
   numbers.y = '';
   numbers.operator = '';
   appendDOM(numbers);
+  $('#operation').html('');
   $('#result').html('');
 }
