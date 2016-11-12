@@ -7,7 +7,7 @@ var numbers = {
 
 $(document).ready(function() {
 
-// event listener to get values of x and y
+// event listener to get values of x and y as well as the operator on DOM
 $('.number').on('click', function() {
   var num = $(this).data('number');
   storeXY(num);
@@ -17,6 +17,7 @@ $('.number').on('click', function() {
 // event listener to get operator
 $('.operator').on('click', function() {
   numbers.operator = $(this).data('operator');
+  appendOperator(numbers);
 });
 
 // event listener to tell the client to send numbers to the appropriate route on the server
@@ -174,6 +175,25 @@ function appendDOM(numbers)  {
   $('#x').html(numbers.x);
   $('#operator').html(numbers.x);
   $('#y').html(numbers.y);
+}
+
+function appendOperator(numbers) {
+  switch (numbers.operator) {
+    case 'add':
+      $('#operation').html('+');
+      break;
+    case 'subtract':
+      $('#operation').html('-');
+      break;
+    case 'multiply':
+      $('#operation').html('*');
+      break;
+    case 'divide':
+      $('#operation').html('/');
+      break;
+    default:
+
+  }
 }
 
 // function to add result to DOM

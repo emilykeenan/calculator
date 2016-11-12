@@ -1,13 +1,31 @@
 body {
   font-family: 'Nunito', sans-serif;
+  color: orange;
 }
 
 #container {
-  width: 300px;
+  width: 320px;
+  margin: 0 auto;
+  background: black;
+  padding: 20px;
+  border-radius: 20px;
 }
 
 #calculations {
   font-family: 'Orbitron', sans-serif;
+  height: 100px;
+}
+
+#x {
+  display: inline;
+}
+
+#y {
+  display: inline;
+}
+
+#operation {
+  display: inline;
 }
 
 button {
@@ -15,4 +33,14 @@ button {
   width: 70px;
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
+  margin: 3px;
+}
+
+.clear {
+  width: 232px;
+}
+
+.equals {
+  width: 150px;
+  background-color: orange;
 }
