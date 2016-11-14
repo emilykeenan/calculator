@@ -23,6 +23,7 @@ $('.operator').on('click', function() {
 // event listener to tell the client to send numbers to the appropriate route on the server
 $('.equals').on('click', findOperation);
 
+// event listener to tell the DOM and numbers object to clear when clear button is clicked
 $('.clear').on('click', clearNumbers);
 
 });

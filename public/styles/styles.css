@@ -35,7 +35,7 @@ h1 {
   padding: 10px;
   overflow: hidden;
   font-size: 25px;
-  box-shadow:         inset 0 0 10px #000000;
+  box-shadow: inset 0 0 10px #000000;
 }
 
 #x {
@@ -68,5 +68,4 @@ button {
 
 .equals {
   width: 150px;
-  background-color: orange;
 }

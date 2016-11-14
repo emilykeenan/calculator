@@ -16,7 +16,6 @@ router.post('/', function(req, res) {
   var x = parseFloat(req.body.x);
   var y = parseFloat(req.body.y);
   number.result = subtract(x, y);
-  console.log(number.result);
   res.sendStatus(201);
 });
 
